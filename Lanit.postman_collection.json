@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "38c8b1ca-0a9b-405d-ace0-0f58398c7090",
+		"name": "Lanit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22433557"
+	},
+	"item": [
+		{
+			"name": "pattern",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Passport\",\r\n    \"attributeFields\": [\r\n        {\r\n            \"name\": \"First name\",\r\n            \"type\": \"string\"\r\n        },\r\n        {\r\n            \"name\": \"Last name\",\r\n            \"type\": \"string\"\r\n        },\r\n        {\r\n            \"name\": \"Date of birth\",\r\n            \"type\": \"date\"\r\n        },\r\n        {\r\n            \"name\": \"Passport office number\",\r\n            \"type\": \"number\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/pattern/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pattern",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/pattern/getPatterns",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pattern",
+								"getPatterns"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/pattern/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pattern",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "document",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"My passport\",\r\n  \"template\": 1,\r\n  \"attributeFields\": [\r\n        {\r\n            \"name\": \"First name\",\r\n            \"value\": \"Ivan\"\r\n        },\r\n        {\r\n            \"name\": \"Last name\",\r\n            \"value\": \"Ivanov\"\r\n        },\r\n        {\r\n            \"name\": \"Date of birth\",\r\n            \"value\": \"1111111111111\"\r\n        },\r\n        {\r\n            \"name\": \"Passport office number\",\r\n            \"value\": \"116\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/document/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"document",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"My passport\",\r\n    \"attributeFields\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"testName\",\r\n            \"value\": \"testValue\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"testName\",\r\n            \"value\": \"testValue\"\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"name\": \"testName\",\r\n            \"value\": \"1111111111111\" \r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"name\": \"testName\",\r\n            \"value\": \"testValue\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/document/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"document",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/document/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"document",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/document/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"document",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
