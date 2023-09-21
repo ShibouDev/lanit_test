@@ -1,4 +1,4 @@
-//@ts-nocheck
+import { AttributeFieldsPattern } from 'src/interfaces';
 import { CreateDocumentDTO, DeleteDocumentDTO, GetDocumentDTO, UpdateDocumentDTO } from '../../dto/document';
 import { AttributesDocument, Document } from '../../repo/document';
 import { Pattern } from '../../repo/pattern';
@@ -12,7 +12,7 @@ export class DocumentService {
 			return false;
 		}
 		const checkTypes = pattern.attributeFields
-			.map((el, i) => {
+			.map((el: AttributeFieldsPattern, i: number) => {
 				const value = dto.attributeFields[i].value;
 				if (el.type === 'date') {
 					if (typeof value === 'string' && value.length === 13) {
@@ -28,7 +28,7 @@ export class DocumentService {
 				}
 				return false;
 			})
-			.every(v => v);
+			.every((v: AttributeFieldsPattern) => v);
 		if (!checkTypes) {
 			return false;
 		}
@@ -51,8 +51,10 @@ export class DocumentService {
 		if (dto.name && getDocument.name !== dto.name) {
 			await db.update(Document, { id: dto.id }, { name: dto.name });
 		}
-		for (const attribute of dto.attributeFields) {
-			await db.update(AttributesDocument, { id: attribute.id }, attribute);
+		if (dto.attributeFields) {
+			for (const attribute of dto.attributeFields) {
+				await db.update(AttributesDocument, { id: attribute.id }, attribute);
+			}
 		}
 		return true;
 	};
